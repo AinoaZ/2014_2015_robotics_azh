@@ -1,0 +1,4 @@
+Este controlador, al llevarlo a Webots no funciona como debería.
+Puesto que en mi practica anterior ( y al no saber el error de esta propuesta)
+el programa si que funcionaba, he querido subirle las dos, para que pueda ver que he intentado simplificar
+el cpp pero no he podido detectar que puede fallar dentro del bucle for que ha sido añadido nuevo.
