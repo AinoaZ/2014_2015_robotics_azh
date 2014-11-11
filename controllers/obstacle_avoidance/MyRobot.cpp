@@ -19,19 +19,40 @@ MyRobot::MyRobot() : DifferentialWheels()
 
     _mode = FORWARD;
 
+    _distance_sensor[0] = getDistanceSensor("ds0");
+    _distance_sensor[0]->enable(_time_step);
+    _distance_sensor[1] = getDistanceSensor("ds1");
+    _distance_sensor[1]->enable(_time_step);
+    _distance_sensor[2] = getDistanceSensor("ds2");
+    _distance_sensor[2]->enable(_time_step);
+    _distance_sensor[3] = getDistanceSensor("ds3");
+    _distance_sensor[3]->enable(_time_step);
+    _distance_sensor[4] = getDistanceSensor("ds4");
+    _distance_sensor[4]->enable(_time_step);
+    _distance_sensor[5] = getDistanceSensor("ds5");
+    _distance_sensor[5]->enable(_time_step);
+    _distance_sensor[6] = getDistanceSensor("ds6");
+    _distance_sensor[6]->enable(_time_step);
+    _distance_sensor[7] = getDistanceSensor("ds7");
+    _distance_sensor[7]->enable(_time_step);
+    _distance_sensor[8] = getDistanceSensor("ds8");
+    _distance_sensor[8]->enable(_time_step);
+    _distance_sensor[9] = getDistanceSensor("ds9");
+    _distance_sensor[9]->enable(_time_step);
+    _distance_sensor[10] = getDistanceSensor("ds10");
+    _distance_sensor[10]->enable(_time_step);
+    _distance_sensor[11] = getDistanceSensor("ds11");
+    _distance_sensor[11]->enable(_time_step);
+    _distance_sensor[12] = getDistanceSensor("ds12");
+    _distance_sensor[12]->enable(_time_step);
+    _distance_sensor[13] = getDistanceSensor("ds13");
+    _distance_sensor[13]->enable(_time_step);
+    _distance_sensor[14] = getDistanceSensor("ds14");
+    _distance_sensor[14]->enable(_time_step);
+    _distance_sensor[15] = getDistanceSensor("ds15");
+    _distance_sensor[15]->enable(_time_step);
 
-     // este bucle permite simplificarla declaracion de todas las distancias de los sensores y su habilitacion
-    for(i=0; i<16; i++)
-    {
 
-        string matriz;
-        ostringstream conversion;
-        conversion<<i;
-        matriz= conversion.str();
-        _distance_sensor[i] = getDistanceSensor("ds"+matriz);
-        _distance_sensor[i]->enable(_time_step);
-
-    }
 
     // Get and enable the compass device
     _my_compass = getCompass("compass");
@@ -55,7 +76,6 @@ void MyRobot::run()
 {
     double compass_angle;
 
-
     double sensor0=0.0,sensor1=0.0,sensor2=0.0, sensor3=0.0,sensor4=0.0, sensor5=0.0,
             sensor6=0.0,sensor7=0.0 ,sensor8=0.0,sensor9=0.0,sensor10=0.0,sensor11=0.0,
             sensor12=0.0,sensor13=0.0,sensor14=0.0, sensor15=0.0;
@@ -76,19 +96,43 @@ void MyRobot::run()
         cout << "left speed: " << _left_speed << endl;
         cout << "right speed: " << _right_speed<< endl;
 
-        for(j=0; j<16; j++)
-        {
-            string matriz2;
-            double sensor[NUM_DISTANCE_SENSOR];
-            ostringstream conversion2;
-            conversion2<<j;
-            matriz2= conversion2.str();
-            sensor[j]=  _distance_sensor[j]->getValue();
-            cout << "Distance sensor " << j <<": "<< sensor[j]<< endl;
+        // Read the sensors
+        sensor0 =  _distance_sensor[0]->getValue();
+        sensor1 =  _distance_sensor[1]->getValue();
+        sensor2 =  _distance_sensor[2]->getValue();
+        sensor3 =  _distance_sensor[3]->getValue();
+        sensor4 =  _distance_sensor[4]->getValue();
+        sensor5 =  _distance_sensor[5]->getValue();
+        sensor6=  _distance_sensor[6]->getValue();
+        sensor7=  _distance_sensor[7]->getValue();
+        sensor8 =  _distance_sensor[8]->getValue();
+        sensor9 =  _distance_sensor[9]->getValue();
+        sensor10=  _distance_sensor[10]->getValue();
+        sensor11=  _distance_sensor[11]->getValue();
+        sensor12=  _distance_sensor[12]->getValue();
+        sensor13 =  _distance_sensor[13]->getValue();
+        sensor14 =  _distance_sensor[14]->getValue();
+        sensor15=  _distance_sensor[15]->getValue();
 
-            }
 
-         // Wall following
+        cout << "Distance sensor 0: " <<  sensor0<< endl;
+        cout << "Distance sensor 1 : " <<  sensor1 << endl;
+        cout << "Distance sensor 2: " << sensor2  << endl;
+        cout << "Distance sensor 3: " <<  sensor3<< endl;
+        cout << "Distance sensor 4: " <<  sensor4<< endl;
+        cout << "Distance sensor 5 : " <<  sensor5 << endl;
+        cout << "Distance sensor 6: " << sensor6  << endl;
+        cout << "Distance sensor 7: " <<  sensor7<< endl;
+        cout << "Distance sensor 8 : " <<  sensor8 << endl;
+        cout << "Distance sensor 9 : " <<  sensor9 << endl;
+        cout << "Distance sensor 10: " << sensor10  << endl;
+        cout << "Distance sensor 11: " <<  sensor11<< endl;
+        cout << "Distance sensor 12 : " <<  sensor12 << endl;
+        cout << "Distance sensor 13: " <<  sensor13<< endl;
+        cout << "Distance sensor 14 : " <<  sensor14 << endl;
+        cout << "Distance sensor 15: " << sensor15  << endl;
+
+        // Wall following
         // Condicion para que el robot siga la brujula
         if ((sensor0==0) && (sensor1==0) &&(sensor2==0) &&(sensor3==0) &&(sensor4==0) &&(sensor5==0) &&(sensor6==0) &&(sensor7==0) &&(sensor8==0) &&(sensor9==0) &&(sensor10==0) &&(sensor11==0) && (sensor12==0) &&(sensor13==0) &&(sensor14==0) && (sensor15==0))
         {

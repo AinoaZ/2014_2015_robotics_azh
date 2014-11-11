@@ -24,6 +24,7 @@ private:
     int _time_step;
     int i,j;
 
+
     DistanceSensor * _distance_sensor[NUM_DISTANCE_SENSOR];
     Compass * _my_compass;
     double _left_speed, _right_speed;
