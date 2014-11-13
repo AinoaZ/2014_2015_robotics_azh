@@ -1,8 +1,8 @@
 /**
- * @file    cameras_example.cpp
- * @brief   Controller example for controlling the cameras of the robot.
+ * @file    wall_detector.cpp
+ * @brief   Controller example for detecting walls.
  *
- * @author  Raul Perula-Martinez <raul.perula@uc3m.es>
+ * @author  Ainoa Zugasti Hernandez <100292754@alumnos.uc3m.es>
  * @date    2014-11
  */
 

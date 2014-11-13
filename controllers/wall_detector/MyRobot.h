@@ -1,13 +1,12 @@
 #ifndef MY_ROBOT_H_
 #define MY_ROBOT_H_
-
 /**
  * @file    MyRobot.h
- * @brief   Controller example for controlling the cameras of the robot.
- *
- * @author  Raul Perula-Martinez <raul.perula@uc3m.es>
+ * @brief   Controller example for detecting walls
+ * @author  Ainoa Zugasti Hernandez <100292754@alumnos.uc3m.es>
  * @date    2014-11
  */
+
 
 #include <iostream>
 #include <webots/DifferentialWheels.hpp>

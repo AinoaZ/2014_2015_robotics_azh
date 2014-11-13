@@ -2,7 +2,7 @@
 #define MY_ROBOT_H_
 
 /**
- * @file    MyRobot.cpp
+ * @file    MyRobot.h
  * @brief   Controller example for detecting  yellow lines.
  *
  * @author  Ainoa Zugasti <100292754@alumnos.uc3m.es>
